@@ -1,3 +1,8 @@
+:root {
+  --pro-Color: #d6464659;
+  --contra-Color: #3ee63e6e;
+  --standard-font-size: 15px;
+}
 * {
   margin: 0;
 }
@@ -5,4 +10,40 @@ main {
   width: 100vw;
   height: 100vh;
   background-color: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: row;
+}
+.textbox {
+  width: 50%;
+  height: 20%;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pro {
+  background-color: var(--pro-Color);
+}
+.contra {
+  background-color: var(--contra-Color);
+}
+.ProArgumentsContainer {
+  width: 50%;
+  height: 100%;
+}
+.ContraArgumentsContainer {
+  width: 50%;
+  height: 100%;
+}
+.textarea {
+  /* margin: 3%; */
+  width: 85%;
+  height: 80%;
+  resize: none;
+  padding: 3%;
+  border-radius: 5px;
+  border: 1px solid rgb(43, 43, 43);
+  border-style: inset;
+  font-size: var(--standard-font-size);
 }
