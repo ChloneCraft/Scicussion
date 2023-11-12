@@ -12,7 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className="ProArgumentsContainer"></section>
+        <section className="ProArgumentsContainer">
+          <button>ADD</button>
+        </section>
         <section className="ContraArgumentsContainer"></section>
       </main>
     </>
