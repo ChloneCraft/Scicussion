@@ -7,7 +7,7 @@ export default function AddArgumentButton({
 }) {
   return (
     <div>
-      <button className={name} onClick={() => addBox}>
+      <button className={name} onClick={(e) => addBox(e, name)}>
         Add <br />
         Argument
       </button>

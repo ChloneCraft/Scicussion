@@ -28,7 +28,13 @@ export default function Home() {
     //     }),
     //   })),
   }));
-  function addBox(): void {}
+  function addBox(e: Event, name: string): void {
+    if (name === "proButton") {
+      alert(name);
+    } else {
+      alert(name);
+    }
+  }
   return (
     <>
       <Head>
@@ -38,10 +44,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className="ProArgumentsContainer">
-          <AddArgumentButton name="proButton" addBox={addBox} />
-        </section>
-        <section className="ContraArgumentsContainer"></section>
+        <h1 className="thesis">Sollten wir Migration begrenzen?</h1>
+        <article className="proContraHead">
+          <section className="proArgumentsContainer">
+            <h2>Pro</h2>
+            <AddArgumentButton name="proButton" addBox={addBox} />
+          </section>
+          <section className="contraArgumentsContainer">
+            <h2>Contra</h2>
+            <AddArgumentButton name="contraButton" addBox={addBox} />
+          </section>
+        </article>
       </main>
     </>
   );
