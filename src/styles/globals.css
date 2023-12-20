@@ -11,7 +11,8 @@ main {
   height: 100vh;
   background-color: rgb(235, 235, 235);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 .textbox {
   width: 50%;
@@ -28,14 +29,19 @@ main {
 .contra {
   background-color: var(--contra-Color);
 }
-.ProArgumentsContainer {
+.proArgumentsContainer,
+.contraArgumentsContainer {
   width: 50%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
-.ContraArgumentsContainer {
+/* .ContraArgumentsContainer {
   width: 50%;
   height: 100%;
-}
+} */
 .textarea {
   /* margin: 3%; */
   width: 85%;
@@ -46,4 +52,13 @@ main {
   border: 1px solid rgb(43, 43, 43);
   border-style: inset;
   font-size: var(--standard-font-size);
+}
+.thesis {
+  font-size: 40px;
+}
+.proContraHead {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  gap: 0%;
 }
