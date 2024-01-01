@@ -3,14 +3,20 @@ import styles from "@/styles/Home.module.css";
 import Textbox from "@/components/Textbox";
 import AddArgumentButton from "@/components/AddArgumentButton";
 import { create } from "zustand";
+import { useState } from "react";
 
 interface Argument {
   text: string;
   show: boolean;
 }
 type Arguments = Argument[];
+let createProArg = false;
+let createContraArg = false;
 
 export default function Home() {
+  const [createProArg, setCreateProArg] = useState(false);
+  const [createContraArg, setCreateContraArg] = useState(false);
+
   const useArgStore = create((set) => ({
     arguments: [],
     addArgument: (newArgument: Argument) =>
@@ -30,9 +36,9 @@ export default function Home() {
   }));
   function addBox(e: Event, name: string): void {
     if (name === "proButton") {
-      alert(name);
+      setCreateProArg(true);
     } else {
-      alert(name);
+      setCreateContraArg(true);
     }
   }
   return (
@@ -48,11 +54,19 @@ export default function Home() {
         <article className="proContraHead">
           <section className="proArgumentsContainer">
             <h2>Pro</h2>
-            <AddArgumentButton name="proButton" addBox={addBox} />
+            <AddArgumentButton
+              name="proButton"
+              addBox={(e: Event) => addBox(e, "proButton")}
+            />
+            {createProArg && <Textbox side="pro"></Textbox>}
           </section>
           <section className="contraArgumentsContainer">
             <h2>Contra</h2>
-            <AddArgumentButton name="contraButton" addBox={addBox} />
+            <AddArgumentButton
+              name="contraButton"
+              addBox={(e: Event) => addBox(e, "contraButton")}
+            />
+            {createContraArg && <Textbox side="contra"></Textbox>}
           </section>
         </article>
       </main>
