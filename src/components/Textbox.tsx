@@ -1,4 +1,12 @@
-export default function Textbox({ side }: { side: string }) {
+import { Button } from "./Button";
+
+export default function Textbox({
+  side,
+  handleCancel,
+}: {
+  side: string;
+  handleCancel: Function;
+}) {
   return (
     <div className={`textbox ${side}`}>
       <textarea
@@ -9,6 +17,9 @@ export default function Textbox({ side }: { side: string }) {
         placeholder="your argument"
         required
       ></textarea>
+      <Button className="cancelButton" onClick={handleCancel}>
+        cancel
+      </Button>
     </div>
   );
 }
