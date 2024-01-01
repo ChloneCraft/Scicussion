@@ -5,6 +5,7 @@
 }
 * {
   margin: 0;
+  font-family: Helvetica, sans-serif;
 }
 main {
   width: 100vw;
@@ -23,12 +24,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-.pro {
-  background-color: var(--pro-Color);
-}
-.contra {
-  background-color: var(--contra-Color);
-}
+
 .proArgumentsContainer,
 .contraArgumentsContainer {
   width: 50%;
@@ -52,6 +48,12 @@ main {
   border: 1px solid rgb(43, 43, 43);
   border-style: inset;
   font-size: var(--standard-font-size);
+}
+.pro .textarea {
+  background-color: var(--pro-Color);
+}
+.contra .textarea {
+  background-color: var(--contra-Color);
 }
 .thesis {
   font-size: 40px;
