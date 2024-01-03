@@ -58,7 +58,12 @@ export default function Home() {
               name="proButton"
               addBox={(e: Event) => addBox(e, "proButton")}
             />
-            {createProArg && <Textbox side="pro"></Textbox>}
+            {createProArg && (
+              <Textbox
+                side="pro"
+                handleCancel={() => setCreateProArg(false)}
+              ></Textbox>
+            )}
           </section>
           <section className="contraArgumentsContainer">
             <h2>Contra</h2>
@@ -66,7 +71,12 @@ export default function Home() {
               name="contraButton"
               addBox={(e: Event) => addBox(e, "contraButton")}
             />
-            {createContraArg && <Textbox side="contra"></Textbox>}
+            {createContraArg && (
+              <Textbox
+                side="contra"
+                handleCancel={() => setCreateContraArg(false)}
+              ></Textbox>
+            )}
           </section>
         </article>
       </main>
