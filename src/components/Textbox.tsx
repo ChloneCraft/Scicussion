@@ -17,9 +17,9 @@ export default function Textbox({
         placeholder="your argument"
         required
       ></textarea>
-      <Button className="cancelButton" onClick={handleCancel}>
+      <button className="cancelButton" onClick={(e) => handleCancel(e)}>
         cancel
-      </Button>
+      </button>
     </div>
   );
 }
