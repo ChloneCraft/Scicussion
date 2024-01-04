@@ -54,10 +54,12 @@ export default function Home() {
         <article className="proContraHead">
           <section className="proArgumentsContainer">
             <h2>Pro</h2>
-            <AddArgumentButton
-              name="proButton"
-              addBox={(e: Event) => addBox(e, "proButton")}
-            />
+            {!createProArg && !createContraArg && (
+              <AddArgumentButton
+                name="proButton"
+                addBox={(e: Event) => addBox(e, "proButton")}
+              />
+            )}
             {createProArg && (
               <Textbox
                 side="pro"
@@ -67,10 +69,12 @@ export default function Home() {
           </section>
           <section className="contraArgumentsContainer">
             <h2>Contra</h2>
-            <AddArgumentButton
-              name="contraButton"
-              addBox={(e: Event) => addBox(e, "contraButton")}
-            />
+            {!createProArg && !createContraArg && (
+              <AddArgumentButton
+                name="contraButton"
+                addBox={(e: Event) => addBox(e, "contraButton")}
+              />
+            )}
             {createContraArg && (
               <Textbox
                 side="contra"
