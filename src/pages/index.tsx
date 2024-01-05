@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import Textbox from "@/components/Textbox";
-import AddArgumentButton from "@/components/AddArgumentButton";
+import Textbox from "../../components/Textbox";
+import AddArgumentButton from "../../components/AddArgumentButton";
 import { create } from "zustand";
 import { useState } from "react";
 
