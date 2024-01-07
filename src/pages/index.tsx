@@ -4,14 +4,34 @@ import Textbox from "../../components/Textbox";
 import AddArgumentButton from "../../components/AddArgumentButton";
 import { create } from "zustand";
 import { useState } from "react";
+import useSWR from "swr";
 
 interface Argument {
   text: string;
   show: boolean;
 }
 type Arguments = Argument[];
+
 let createProArg = false;
 let createContraArg = false;
+
+//---------send request to api---------------
+export async function sendRequest(url: string, { arg }: any) {
+  const response = await fetch(url, {
+    method: "PUT",
+    body: JSON.stringify(arg),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.ok) {
+    return await response.json();
+  } else {
+    console.error(`Error: ${response.status}`);
+    return "error";
+  }
+}
+//---------send request to api---------------
 
 export default function Home() {
   const [createProArg, setCreateProArg] = useState(false);
@@ -21,26 +41,18 @@ export default function Home() {
     arguments: [],
     addArgument: (newArgument: Argument) =>
       set((state: any) => ({ arguments: state.arguments.push(newArgument) })),
-    // hideArguments: () =>
-    //   set((state: any) => ({
-    //     arguments: state.arguments.map((arg: Argument) => {
-    //       arg.show = false;
-    //     }),
-    //   })),
-    //   showArguments: () =>
-    //   set((state: any) => ({
-    //     arguments: state.arguments.map((arg: Argument) => {
-    //       arg.show = true;
-    //     }),
-    //   })),
   }));
+
+  //----------create input field for new argument------------
   function addBox(e: Event, name: string): void {
     if (name === "proButton") {
       setCreateProArg(true);
+      sendRequest("/api/createDiscussion", { arg: "test" });
     } else {
       setCreateContraArg(true);
     }
   }
+  //----------create input field for new argument------------
   return (
     <>
       <Head>

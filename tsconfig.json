@@ -30,7 +30,8 @@
     "src/pages/_app.tsx",
     "components/Farm/Farm.jsx",
     "db/models/User.ts",
-    "components/Weather/WeatherComponent.jsx"
+    "components/Weather/WeatherComponent.jsx",
+    "src/pages/api/aa"
   ],
   "exclude": ["node_modules"]
 }
