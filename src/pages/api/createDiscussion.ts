@@ -10,7 +10,8 @@ export default async function handler(
 
   if (req.method === "GET") {
     return res.status(200).json(Discussion);
-  } else if (req.method === "POST") {
+  } else if (req.method === "PUT") {
+    console.log("test");
     try {
       const newDiscussion = {
         parent: "0",

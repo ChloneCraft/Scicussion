@@ -17,6 +17,8 @@ let createContraArg = false;
 
 //---------send request to api---------------
 export async function sendRequest(url: string, { arg }: any) {
+  console.log("send request");
+
   const response = await fetch(url, {
     method: "PUT",
     body: JSON.stringify(arg),
